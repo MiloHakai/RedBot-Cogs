@@ -1,0 +1,19 @@
+{
+    "author": ["MiloHakai"],
+    "install_msg": "You've successfully installed a hug cog!",
+    "name": "Hug",
+    "version": "1.0.0",
+    "minimum_bot_version": "3.0.0",
+    "tags": ["hug", "gif", "counter"],
+    "required_cogs": [],
+    "commands": [
+        {
+            "name": "hug",
+            "description": "Hugs a user and displays a hugging gif with a pink embed. Also includes a hug counter.",
+            "usage": "!hug <user>",
+            "examples": [
+                "!hug @user"
+            ]
+        }
+    ]
+}
