@@ -25,5 +25,5 @@ class hug(commands.Cog):
         embed.set_image(url=gif_url)
         await ctx.send(embed=embed)
 
-def setup(bot):
-    bot.add_cog(hug(bot))
+async def setup(bot): # async
+  await bot.add_cog(Cog(bot)) # await
