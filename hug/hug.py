@@ -25,8 +25,8 @@ class hug(commands.Cog):
         hug_count = await self.config.guild(ctx.guild).hug_counter()
         await self.config.guild(ctx.guild).hug_counter.set(hug_count + 1)
         
-        hugger = escape_mentions(ctx.author.mention)
-        hugged_member = escape_mentions(member.mention)
+        hugger = ctx.author.mention
+        hugged_member = member.mention
         
         embed = discord.Embed(
             title=f"{hugger} hugged {hugged_member}!",
