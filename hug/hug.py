@@ -16,14 +16,22 @@ class hug(commands.Cog):
         ]
 
     @commands.command()
-    async def hug(self, ctx, user: discord.Member):
-        """Hugs a user."""
+    async def hug(self, ctx, member: discord.Member):
+        """Hug someone!"""
+        server_name = ctx.guild.name
         gif_url = random.choice(self.gifs)
-        await self.config.guild(ctx.guild).hug_counter.set(await self.config.guild(ctx.guild).hug_counter() + 1)
-        hug_count = await self.config.guild(ctx.guild).hug_counter()
-        embed = discord.Embed(title=f"{ctx.author.name} hugs {user.name}!", description=f"Total hugs: {hug_count}", color=0xff69b4)
+        
+        embed = discord.Embed(
+            title=f"{ctx.author.name} hugged {member.name} in {server_name}!",
+            color=discord.Color.purple()
+        )
         embed.set_image(url=gif_url)
+
+        if ctx.guild.id not in self.hug_counter:
+            self.hug_counter[ctx.guild.id] = 0
+        self.hug_counter[ctx.guild.id] += 1
+        embed.set_footer(text=f"Hugs given in {server_name}: {self.hug_counter[ctx.guild.id]}")
         await ctx.send(embed=embed)
 
-async def setup(bot): # async
-  await bot.add_cog(Cog(bot)) # await
+def setup(bot):
+    bot.add_cog(Hug(bot))
