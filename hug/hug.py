@@ -25,15 +25,15 @@ class hug(commands.Cog):
         hug_count = await self.config.guild(ctx.guild).hug_counter()
         await self.config.guild(ctx.guild).hug_counter.set(hug_count + 1)
         
-        hugger = ctx.author.display_name
-        hugged_member = member.display_name
+        hugger = ctx.author.mention
+        hugged_member = member.mention
         
         embed = discord.Embed(
             title=f"{hugger} hugged {hugged_member}!",
             color=discord.Color.purple()
         )
         embed.set_image(url=gif_url)
-        embed.set_footer(text=f"Total hugs given: {hug_count + 1}")
+        embed.set_footer(text=f"{ctx.author.name} has given {hug_count + 1} hugs so far.")
         
         await ctx.send(embed=embed)
 
