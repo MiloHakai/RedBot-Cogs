@@ -25,12 +25,11 @@ class hug(commands.Cog):
         hug_count = await self.config.guild(ctx.guild).hug_counter()
         await self.config.guild(ctx.guild).hug_counter.set(hug_count + 1)
         
-        hugger = ctx.author.mention
-        hugged_member = member.mention
+        hugger = ctx.author.display_name
+        hugged_member = member.display_name
         
         embed = discord.Embed(
             title=f"{hugger} hugged {hugged_member}!",
-            description="\u200b",  # This will prevent any content from rendering in the description
             color=discord.Color.purple()
         )
         embed.set_image(url=gif_url)
