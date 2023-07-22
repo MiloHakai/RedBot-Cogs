@@ -30,6 +30,7 @@ class hug(commands.Cog):
         
         embed = discord.Embed(
             title=f"{hugger} hugged {hugged_member}!",
+            description="\u200b",  # This will prevent any content from rendering in the description
             color=discord.Color.purple()
         )
         embed.set_image(url=gif_url)
