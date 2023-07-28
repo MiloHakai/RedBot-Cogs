@@ -4,4 +4,4 @@ __red_end_user_data_statement__ = "This cog does not persistentily store data or
 
 
 async def setup(bot):
-    await bot.add_cog(hug(bot))
+    await bot.add_cog(kiss(bot))
