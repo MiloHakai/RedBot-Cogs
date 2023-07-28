@@ -30,7 +30,7 @@ class Kiss(commands.Cog):
         kissed_member = member.display_name
 
         embed = discord.Embed(
-            title=d"{kisser} kissed {kissed_member}",
+            title=f"{kisser} kissed {kissed_member}!",
             color=discord.Color.blue()
         )
         embed.set_image(url=gif_url)
