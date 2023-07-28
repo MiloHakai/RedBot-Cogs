@@ -9,7 +9,7 @@ class Kiss(commands.Cog):
         self.gifs = [
             "https://media.giphy.com/media/bm2O3nXTcKJeU/giphy.gif",
             "https://media.giphy.com/media/G3va31oEEnIkM/giphy.gif",
-            "https://media.giphy.com/media/MQVpBqASxSlFu/giphy.gif"
+            "https://media.giphy.com/media/MQVpBqASxSlFu/giphy.gif",
             "https://media.giphy.com/media/11rWoZNpAKw8w/giphy.gif",
             "https://media.giphy.com/media/gTLfgIRwAiWOc/giphy.gif",
             "https://media.giphy.com/media/12VXIxKaIEarL2/giphy.gif",
@@ -22,7 +22,7 @@ class Kiss(commands.Cog):
     async def kiss(self, ctx, member: discord.Member):
         """Kiss someone C:"""
         gif_url = random.choice(self.gifs)
-
+        
         kiss_count = await self.config.guild(ctx.guild).kiss_counter()
         await self.config.guild(ctx.guild).kiss_counter.set(kiss_count + 1)
 
