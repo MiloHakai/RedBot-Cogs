@@ -39,4 +39,4 @@ class kiss(commands.Cog):
         await ctx.send(embed=embed)
 
 def setup(bot):
-    bot.add_cog(Hug(bot))
+    bot.add_cog(kiss(bot))
