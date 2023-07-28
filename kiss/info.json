@@ -1,0 +1,19 @@
+{
+    "author": ["MiloHakai"],
+    "install_msg": "You can now !kiss your partner or your homies",
+    "name": "kiss",
+    "version": "1.0.0",
+    "minimum_bot_version": "3.0.0",
+    "tags": ["kiss", "gif", "counter"],
+    "required_cogs": [],
+    "commands": [
+        {
+            "name": "kiss",
+            "description": "Kiss a user and displays a kissging gif with a pink embed. Also includes a kiss counter.",
+            "usage": "!kiss <user>",
+            "examples": [
+                "!kiss @user"
+            ]
+        }
+    ]
+}
